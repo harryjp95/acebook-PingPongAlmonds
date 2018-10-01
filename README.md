@@ -38,6 +38,39 @@ As a user,
 so I can interact with Acebook
 I want to be able to sign in.
 
+As a user,
+so I can take time away from Acebook,
+I want to be able to log out.
+
+As a user,
+so I can share my thoughts,
+I want to be able to post on Acebook.
+
+As a user,
+so I can show my support for posts,
+I want to be able to like others posts.
+
+As a user,
+so I can share my opinion re. other posts,
+I want to be able to comment on posts.
+```
+
+## Quick Start
+
+Make sure to install Rails if you don't already have it:
+
+```
+gem install rails
+
+Clone this repository. Then:
+
+> bundle install
+> bin/rails db:create
+> bin/rails db:migrate
+
+> bundle exec rspec # Run the tests to ensure it works
+> bin/rails server # Start the server at localhost:3000
+
 ```
 
 
