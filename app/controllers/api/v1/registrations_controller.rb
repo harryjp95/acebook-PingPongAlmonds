@@ -1,6 +1,6 @@
 module Api    
   module V1
-    class UsersController < ApplicationController
+    class RegistrationsController < ApplicationController
       def new
         @user = User.new
         render json: @user

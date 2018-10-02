@@ -5,8 +5,8 @@ Rails.application.routes.draw do
       get 'home/index'
 
       # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-      resources :posts
-      resources :users
+      resources :posts, only: [:index, :show, :create]
+      resources :users, only: [:index, :show, :create]
       # resources :posts
 
       root 'home#index'
