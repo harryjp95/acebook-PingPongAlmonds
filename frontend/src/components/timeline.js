@@ -10,7 +10,7 @@ class Timeline extends React.Component {
   }
 
   returnFeed() {
-    if (this.state.feed === null) return "press button";
+    if (this.state.feed === null) return "";
     const posts = this.state.feed.map(post => (
       <div className="timeline">
         <li className="posts">
@@ -43,7 +43,7 @@ class Timeline extends React.Component {
         <div>
           <form onSubmit={this.handleSubmit}>
             <label>
-              <input type="submit" value="Get Posts" />
+              {/* <input type="submit" value="Get Posts" /> */}
             </label>
           </form>
         </div>
