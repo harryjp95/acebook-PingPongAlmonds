@@ -38,7 +38,8 @@ class SignIn extends Component {
           token: result.authentication_token
         })
       );
-    console.log(this.state.token);
+    const { onSubmit } = this.props;
+    onSubmit(this.state.token);
   };
 
   render() {
