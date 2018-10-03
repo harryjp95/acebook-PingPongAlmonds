@@ -19,11 +19,6 @@ class App extends React.Component {
     this.setState({ token: token });
   }
 
-  consoleTest(event) {
-    event.preventDefault();
-    console.log(this.state.token);
-  }
-
   render() {
     return (
       <React.Fragment>
