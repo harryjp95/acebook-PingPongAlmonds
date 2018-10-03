@@ -33,52 +33,29 @@ class SignUp extends Component {
     }).then(res => console.log(res));
     event.preventDefault();
   }
+  
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <label>
-          First Name
-          <br />
-          <input
-            type="text"
-            name="first_name"
-            value={this.state.first_name}
-            onChange={this.handleInputChange}
-          />
-        </label>
-        <label>
-          Surname
-          <br />
-          <input
-            type="text"
-            name="surname"
-            value={this.state.surname}
-            onChange={this.handleInputChange}
-          />
-        </label>
-        <label>
-          Email
-          <br />
-          <input
-            type="email"
-            name="email"
-            value={this.state.email}
-            onChange={this.handleInputChange}
-          />
-        </label>
-        <label>
-          Password
-          <br />
-          <input
-            type="password"
-            name="password"
-            value={this.state.password}
-            onChange={this.handleInputChange}
-          />
-        </label>
-        <input type="submit" value="Sign Up" />
-      </form>
+      <div className="container" id="sign_up">
+        <form onSubmit={this.handleSubmit}>
+          <div className="form-row">
+            <div className="form-group col-md-6">
+              <input type="text" className="form-control" id="inputFirstName" placeholder="First Name" name="first_name" value={this.state.first_name} onChange={this.handleInputChange} required/>
+            </div>
+            <div className="form-group col-md-6">
+              <input type="text" className="form-control" id="inputSurname" placeholder="Surname" name="surname" value={this.state.surname} onChange={this.handleInputChange} required/>
+            </div>
+          </div>
+          <div className="form-group">
+            <input type="email" className="form-control" id="inputEmail" placeholder="Email" name="email" value={this.state.email} onChange={this.handleInputChange} required/>
+          </div>
+          <div className="form-group">
+            <input type="password" className="form-control" id="inputPassword" placeholder="Password" value={this.state.password} name="password" onChange={this.handleInputChange} required/>
+          </div>
+          <button type="submit" className="btn btn-success btn-lg btn-block">Sign Up</button>
+        </form>
+      </div>
     );
   }
 }
