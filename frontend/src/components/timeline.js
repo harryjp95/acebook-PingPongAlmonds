@@ -15,11 +15,21 @@ class Timeline extends React.Component {
       <div className="container">
         <ul className="list-group">
           <li key={post.id} className="list-group-item">
-            <h4>{post.user_id}</h4>
-            <p>{post.message}</p>
-          </li>
+            <div className="media">
+              <img className="mr-3" src="http://placekitten.com/g/64/64" alt="Generic placeholder image"/>
+              <div className="media-body">
+                <p className="mt-0">James Daniel Malvern</p>
+                <p>{post.message}</p>
+              </div>
+            </div>
+           </li>
         </ul>
       </div>
+
+    
+
+
+
     ));
     return (
       <div>

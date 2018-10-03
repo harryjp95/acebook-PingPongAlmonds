@@ -1,9 +1,6 @@
-/* .centered {
-  text-align: center;
-  display: block;
-  margin-bottom: 30px;
-  margin-left: 0px;
-} */
+p {
+  font-size: 14px
+}
 
 .navbar {
   height: 115px
