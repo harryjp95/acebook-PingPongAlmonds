@@ -20,15 +20,13 @@ class App extends React.Component {
   }
 
   render() {
+    var timeLine = null;
+    if (this.state.token) timeLine = <Timeline />;
     return (
       <React.Fragment>
-        <Navbar />
-        <SignIn onSubmit={this.onFormSubmit} />
+        <Navbar onSubmit={this.onFormSubmit} />
         <SignUp />
-        <Timeline />
-        <form onSubmit={this.consoleTest}>
-          <input type="submit" value="TEST" />
-        </form>
+        {timeLine}
       </React.Fragment>
     );
   }
