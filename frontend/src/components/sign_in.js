@@ -19,9 +19,10 @@ class SignIn extends Component {
     });
   }
 
-  handleSubmit(event) {
+  handleSubmit = async event => {
+    event.preventDefault();
     const url = "http://localhost:3000/api/v1/sessions";
-    fetch(url, {
+    await fetch(url, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -38,8 +39,7 @@ class SignIn extends Component {
         })
       );
     console.log(this.state.token);
-    event.preventDefault();
-  }
+  };
 
   render() {
     return (
