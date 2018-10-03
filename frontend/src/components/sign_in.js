@@ -19,9 +19,10 @@ class SignIn extends Component {
     });
   }
 
-  handleSubmit(event) {
+  handleSubmit = async event => {
+    event.preventDefault();
     const url = "http://localhost:3000/api/v1/sessions";
-    fetch(url, {
+    await fetch(url, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -31,15 +32,15 @@ class SignIn extends Component {
         password: this.state.password
       })
     })
-    .then(res => res.json())
-    .then(result =>
-      this.setState({
-        token: result.authentication_token
-      })
-    );
-    console.log(this.state.token);
-    event.preventDefault();
-  }
+      .then(res => res.json())
+      .then(result =>
+        this.setState({
+          token: result.authentication_token
+        })
+      );
+    const { onSubmit } = this.props;
+    onSubmit(this.state.token);
+  };
 
   render() {
     return (
