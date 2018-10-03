@@ -18,7 +18,7 @@ module Api
       end
 
       private
-
+      
       def current_user
         authenticate_with_http_token do |token, options|
           User.find_by(authentication_token: token)
