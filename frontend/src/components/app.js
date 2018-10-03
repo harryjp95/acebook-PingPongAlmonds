@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Navbar from "./navbar"
+import Navbar from "./navbar";
 import Timeline from "./timeline";
 import SignIn from "./sign_in";
 import SignUp from "./sign_up";
@@ -13,7 +13,6 @@ class App extends React.Component {
       token: ""
     };
     this.onFormSubmit = this.onFormSubmit.bind(this);
-    this.consoleTest = this.consoleTest.bind(this);
   }
 
   onFormSubmit(token) {
