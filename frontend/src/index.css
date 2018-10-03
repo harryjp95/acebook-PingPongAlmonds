@@ -13,6 +13,18 @@
   margin-top: 50px
 }
 
+.sign_in {
+  margin-top: 9px;
+}
+
+.sign_in #email {
+  margin-right: 5px
+}
+
+.sign_in #password {
+  margin-right: 5px
+}
+
 .navbar-brand {
   font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif; 
   font-size: 40px; 

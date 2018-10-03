@@ -21,6 +21,8 @@ class SignUp extends Component {
   }
 
   handleSubmit(event) {
+    // console.log(this.state.first_name);
+    
     const url = "http://localhost:2000/api/v1/users";
     fetch(url, {
       method: "POST",
@@ -28,93 +30,29 @@ class SignUp extends Component {
     }).then(res => console.log(res));
     event.preventDefault();
   }
+  
 
   render() {
     return (
       <div className="container" id="sign_up">
-        <form>
-          <div class="form-row">
-            <div class="form-group col-md-6">
-              <input type="email" class="form-control" id="inputEmail4" placeholder="Email"/>
+        <form onSubmit={this.handleSubmit}>
+          <div className="form-row">
+            <div className="form-group col-md-6">
+              <input type="text" className="form-control" id="inputFirstName" placeholder="First Name" name="first_name" value={this.state.first_name} onChange={this.handleInputChange} required/>
             </div>
-            <div class="form-group col-md-6">
-              <input type="password" class="form-control" id="inputPassword4" placeholder="Password"/>
-            </div>
-          </div>
-          <div class="form-group">
-            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St"/>
-          </div>
-          <div class="form-group">
-            <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor"/>
-          </div>
-          <div class="form-row">
-            <div class="form-group col-md-6">
-              <input type="text" class="form-control" id="inputCity"/>
-            </div>
-            <div class="form-group col-md-4">
-              <select id="inputState" class="form-control">
-                <option selected>Choose...</option>
-                <option>...</option>
-              </select>
-            </div>
-            <div class="form-group col-md-2">
-              <input type="text" class="form-control" id="inputZip"/>
+            <div className="form-group col-md-6">
+              <input type="text" className="form-control" id="inputSurname" placeholder="Surname" name="surname" value={this.state.surname} onChange={this.handleInputChange} required/>
             </div>
           </div>
-          <div class="form-group">
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="gridCheck"/>
-              <label class="form-check-label" for="gridCheck">
-                Check me out
-              </label>
-            </div>
+          <div className="form-group">
+            <input type="email" className="form-control" id="inputEmail" placeholder="Email" name="email" value={this.state.email} onChange={this.handleInputChange} required/>
           </div>
-          <button type="submit" class="btn btn-primary block">Sign Up</button>
+          <div className="form-group">
+            <input type="password" className="form-control" id="inputPassword" placeholder="Password" value={this.state.password} name="password" onChange={this.handleInputChange} required/>
+          </div>
+          <button type="submit" className="btn btn-success btn-lg btn-block">Sign Up</button>
         </form>
       </div>
-      // <form onSubmit={this.handleSubmit}>
-      //   <label>
-      //     First Name
-      //     <br />
-      //     <input
-      //       type="text"
-      //       name="first_name"
-      //       value={this.state.first_name}
-      //       onChange={this.handleInputChange}
-      //     />
-      //   </label>
-      //   <label>
-      //     Surname
-      //     <br />
-      //     <input
-      //       type="text"
-      //       name="surname"
-      //       value={this.state.surname}
-      //       onChange={this.handleInputChange}
-      //     />
-      //   </label>
-      //   <label>
-      //     Email
-      //     <br />
-      //     <input
-      //       type="email"
-      //       name="email"
-      //       value={this.state.email}
-      //       onChange={this.handleInputChange}
-      //     />
-      //   </label>
-      //   <label>
-      //     Password
-      //     <br />
-      //     <input
-      //       type="password"
-      //       name="password"
-      //       value={this.state.password}
-      //       onChange={this.handleInputChange}
-      //     />
-      //   </label>
-      //   <input type="submit" value="Sign Up" />
-      // </form>
     );
   }
 }

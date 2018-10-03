@@ -31,19 +31,19 @@ class SignIn extends Component {
         password: this.state.password
       })
     })
-      .then(res => res.json())
-      .then(result =>
-        this.setState({
-          token: result.authentication_token
-        })
-      );
+    .then(res => res.json())
+    .then(result =>
+      this.setState({
+        token: result.authentication_token
+      })
+    );
     console.log(this.state.token);
     event.preventDefault();
   }
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form onSubmit={this.handleSubmit} className="sign_in">
         <br />
         <label>
           Email:
@@ -51,6 +51,7 @@ class SignIn extends Component {
           <input
             type="text"
             name="email"
+            id="email"
             value={this.state.email}
             onChange={this.handleInputChange}
           />
@@ -61,6 +62,7 @@ class SignIn extends Component {
           <input
             type="password"
             name="password"
+            id="password"
             value={this.state.password}
             onChange={this.handleInputChange}
           />

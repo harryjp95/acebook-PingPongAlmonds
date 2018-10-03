@@ -5,7 +5,6 @@ class NavBar extends Component {
   constructor(props){
     super(props)
     this.state = {
-
     }
   }
 
@@ -19,7 +18,7 @@ class NavBar extends Component {
         
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav ml-auto">
-            <li className="nav-item">
+              <li className="nav-item">
                 <a className="nav-link" href="#"><SignIn /></a>
               </li>
              
