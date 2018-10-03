@@ -12,17 +12,18 @@ class Timeline extends React.Component {
   returnFeed() {
     if (this.state.feed === null) return "";
     const posts = this.state.feed.map(post => (
-      <div className="timeline">
-        <li className="posts">
-          <h4>{post.user_id}</h4>
-          <h5>{post.message}</h5>
-        </li>
-        <br />
+      <div className="container">
+        <ul className="list-group">
+          <li key={post.id} className="list-group-item">
+            <h4>{post.user_id}</h4>
+            <p>{post.message}</p>
+          </li>
+        </ul>
       </div>
     ));
     return (
       <div>
-        <ul className="centered">{posts}</ul>
+        {posts}
       </div>
     );
   }
@@ -43,7 +44,7 @@ class Timeline extends React.Component {
         <div>
           <form onSubmit={this.handleSubmit}>
             <label>
-              {/* <input type="submit" value="Get Posts" /> */}
+              <input type="submit" value="Get Posts" />
             </label>
           </form>
         </div>
