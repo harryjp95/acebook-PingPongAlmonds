@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import Navbar from "./navbar"
 import Timeline from "./timeline";
 import SignIn from "./sign_in"
 import SignUp from "./sign_up"
@@ -9,7 +10,7 @@ class App extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <SignIn />
+        <Navbar />
         <SignUp />
         <Timeline />
       </React.Fragment>
