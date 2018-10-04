@@ -13,6 +13,9 @@ module Api
 
       def create
         @post = Post.create(post_params)
+        
+        p 'hello world'
+        p current_user.id
         if @post.save
           render 'new'
         else
@@ -22,8 +25,14 @@ module Api
 
       private
       def post_params
-        params.require(:post).permit(:message).merge(user_id: 2)
+        params.require(:post).permit(:message).merge(user_id: current_user.id)
       end
+
+      def current_user
+        authenticate_with_http_token do |token, options|
+          User.find_by(authentication_token: token)
+        end
+      end  
     end
   end
 end
