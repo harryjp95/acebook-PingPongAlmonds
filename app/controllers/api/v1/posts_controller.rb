@@ -13,9 +13,6 @@ module Api
 
       def create
         @post = Post.create(post_params)
-        
-        p 'hello world'
-        p current_user.id
         if @post.save
           render 'new'
         else
