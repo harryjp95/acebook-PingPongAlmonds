@@ -19,6 +19,7 @@ RSpec.describe 'users API', type: :request do
           expect(response).to have_http_status(201)
         end
       end
+
     context 'invalid user' do
     let(:invalid_attributes) {{user: {email:"", password:""}}}
     before { post '/api/v1/users', params: invalid_attributes }
