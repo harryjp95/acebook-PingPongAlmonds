@@ -37,24 +37,21 @@ RSpec.describe 'sessions API', type: :request do
     end
   end
 
-  # get token
-  
-
   describe 'delete /sessions' do
     context 'auth token is valid' do
-      # it 'returns a status code of 200' do
-
-      #   post '/api/v1/sessions', params: {email: "test1@test.com", password: "password"}
-      #   headers = { "AUTHORIZATION" => "token #{json['authentication_token']}"}
-      #   p headers
-      #   delete '/api/v1/sessions', params: {}, headers: headers
-      #   expect(response).to have_http_status(200)
-      # end
+      it 'returns a status code of 200' do
+        post '/api/v1/sessions', params: {email: "test1@test.com", password: "password"}
+        headers = { "AUTHORIZATION": "Token #{json['authentication_token']}"}
+        delete '/api/v1/sessions', params: {}, headers: headers
+        expect(response).to have_http_status(200)
+      end
     end
-    # OK so it is successfully retrieving an auth token
-    # But the problem is it is trying to delete using the token before the token exists
     
     context 'auth token is invalid' do
+      it 'returns a status code of 401' do
+        delete '/api/v1/sessions', params: {}, headers: { "AUTHORIZATION": "Token not_a_real_token" }
+        expect(response).to have_http_status(401)
+      end
     end
   end
 
