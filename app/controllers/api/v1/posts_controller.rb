@@ -14,15 +14,15 @@ module Api
       def create
         @post = Post.create(post_params)
         if @post.save
-          redirect_to posts_url
-        else
           render 'new'
+        else
+          render 'fail'
         end
       end
 
       private
       def post_params
-        params.require(:post).permit(:message).merge(user_id: current_user.id)
+        params.require(:post).permit(:message).merge(user_id: 2)
       end
     end
   end
