@@ -68,7 +68,7 @@ class SignIn extends Component {
             onChange={this.handleInputChange}
           />
         </label>
-        <input type="submit" value="Sign In" />
+        <input type="submit" id="signin" value="Sign In" />
       </form>
     );
   }

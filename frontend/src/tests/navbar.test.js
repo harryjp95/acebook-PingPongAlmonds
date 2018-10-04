@@ -12,6 +12,6 @@ it("renders without crashing", () => {
 });
 
 it("is the parent of a SignIn component", () => {
-  const navbar = shallow(<NavBar />);
-  expect(navbar.find(SignIn).length).toEqual(1);
+  const wrapper = shallow(<NavBar />);
+  expect(wrapper.find(SignIn).length).toEqual(1);
 });

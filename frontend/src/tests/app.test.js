@@ -14,16 +14,16 @@ it("renders without crashing", () => {
 });
 
 it("is the parent of a NavBar component", () => {
-  const app = shallow(<App />);
-  expect(app.find(NavBar).length).toEqual(1);
+  const wrapper = shallow(<App />);
+  expect(wrapper.find(NavBar).length).toEqual(1);
 });
 
 it("token is set to and empty string by defualt", () => {
-  const app = shallow(<App />);
-  expect(app.state("token")).toEqual("");
+  const wrapper = shallow(<App />);
+  expect(wrapper.state("token")).toEqual("");
 });
 
 it("does not render a Timeline component when there is no token", () => {
-  const app = shallow(<App />);
-  expect(app.find(Timeline).length).toEqual(0);
+  const wrapper = shallow(<App />);
+  expect(wrapper.find(Timeline).length).toEqual(0);
 });
