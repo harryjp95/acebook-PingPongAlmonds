@@ -8,13 +8,13 @@ module Api
           @user.save
           render json: session_info(@user), status: :created
         else
-          head(:unauthorized)
+          head :unauthorized
         end
       end
     
       def destroy
         if current_user == nil
-          head(:unauthorized)
+          head :unauthorized
         else
           current_user.reset_authentication_token!
           head :ok
