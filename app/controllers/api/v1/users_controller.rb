@@ -2,6 +2,11 @@ module Api
   module V1
     class UsersController < ApplicationController
       
+      def show
+        @user = User.find_by(id: params[:id])
+        json_response(@user, :created)
+      end
+
       def create
         @user = User.new(user_params)
         if @user.save
