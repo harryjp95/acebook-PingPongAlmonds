@@ -19,9 +19,10 @@ class SignIn extends Component {
     });
   }
 
-  handleSubmit(event) {
+  handleSubmit = async event => {
+    event.preventDefault();
     const url = "http://localhost:3000/api/v1/sessions";
-    fetch(url, {
+    await fetch(url, {
       method: "POST",
       headers: {
         "Content-Type": "application/json"
@@ -37,13 +38,13 @@ class SignIn extends Component {
           token: result.authentication_token
         })
       );
-    console.log(this.state.token);
-    event.preventDefault();
-  }
+    const { onSubmit } = this.props;
+    onSubmit(this.state.token);
+  };
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form onSubmit={this.handleSubmit} className="sign_in">
         <br />
         <label>
           Email:
@@ -51,6 +52,7 @@ class SignIn extends Component {
           <input
             type="text"
             name="email"
+            id="email"
             value={this.state.email}
             onChange={this.handleInputChange}
           />
@@ -61,6 +63,7 @@ class SignIn extends Component {
           <input
             type="password"
             name="password"
+            id="password"
             value={this.state.password}
             onChange={this.handleInputChange}
           />
