@@ -6,17 +6,17 @@ module Api
         @posts = Post.all
         render json: @posts
       end
-      
-      def new
-        @post = Post.new
-      end
 
       def create
-        @post = Post.create(post_params)
-        if @post.save
-          render 'new'
+        if current_user == nil
+          head :unauthorized
         else
-          render 'fail'
+          @post = Post.create(post_params)
+          if @post.save
+            render json: post_info(@post), status: :created
+          else
+            render 'fail'
+          end
         end
       end
 
@@ -29,7 +29,11 @@ module Api
         authenticate_with_http_token do |token, options|
           User.find_by(authentication_token: token)
         end
-      end  
+      end 
+
+      def post_info(post)
+        post.as_json(only: [:message, :authentication_token])
+      end 
     end
   end
 end
