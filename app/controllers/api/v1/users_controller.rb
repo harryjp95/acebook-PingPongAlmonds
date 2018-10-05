@@ -18,7 +18,7 @@ module Api
 
       private
       def user_params
-        params.require(:user).permit(:email, :password)
+        params.require(:user).permit(:email, :password, :first_name, :surname)
       end
 
       def json_response(object, status = :ok)
