@@ -1,4 +1,4 @@
-# Acebook-PIngPongAlmonds
+# Acebook
 
 Makers week 8 group project - The aim here, initially, was to build a Facebook clone in Rails. Halfway through the project we were given a change in requirements and told to separate the fornt & back end. The work done in Rails was to confirgured to work as an API, and the front-end was done in React, which can be found [here](https://github.com/hjpugh/acebook-react-frontend).
 
