@@ -1,6 +1,6 @@
-# Acebook-PIngPongAlmonds
+# Acebook
 
-Makers week 8 group project - Facebook clone done in Rails.
+Makers week 8 group project - The aim here, initially, was to build a Facebook clone in Rails. Halfway through the project we were given a change in requirements and told to separate the fornt & back end. The work done in Rails was to confirgured to work as an API, and the front-end was done in React, which can be found [here](https://github.com/hjpugh/acebook-react-frontend).
 
 ## Dev Team
 
@@ -17,8 +17,6 @@ Makers week 8 group project - Facebook clone done in Rails.
 ## Team Communication
 
 [Trello](https://trello.com/b/3i0RY2zH/pingpongalmonds)
-
-[Waffle](https://waffle.io/hjpugh/Acebook-PIngPongAlmonds)
 
 ## Learning Objectives
 
@@ -75,39 +73,10 @@ Clone this repository. Then:
 > bin/rails server # Start the server at localhost:3000
 ```
 
-Things you may want to cover:
+## Info
 
 - Ruby version
 
 ```
 ruby 2.5.1
-```
-
-- System dependencies
-
-- Configuration
-
-- Database creation
-
-- Database initialization
-
-- How to run the test suite
-
-- Services (job queues, cache servers, search engines, etc.)
-
-- Deployment instructions
-
-- ...
-
-## Quickstart
-
-First, clone this repository. Then:
-
-```bash
-> bundle install
-> bin/rails db:create
-> bin/rails db:migrate
-
-> bundle exec rspec # Run the tests to ensure it works
-> bin/rails server # Start the server at localhost:3000
 ```
