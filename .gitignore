@@ -3,3 +3,4 @@ tmp/
 coverage/
 log/test.log
 log/development.log
+log/
